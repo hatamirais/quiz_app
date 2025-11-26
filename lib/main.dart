@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/screen_theme.dart';
+import 'package:quiz_app/start_screen.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text("Quiz App"), centerTitle: true),
         body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/quiz-logo.png"),
-              fit: BoxFit.cover,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 45, 152, 81),
+                Color.fromARGB(255, 82, 69, 177)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-          child: const ScreenTheme.deepPurple(),
+          child: ScreenTheme(),
         ),
       ),
     ),
