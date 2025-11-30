@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 class ScreenTheme extends StatelessWidget {
+  ScreenTheme({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -9,21 +10,33 @@ class ScreenTheme extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/images/quiz-logo.png", width: 300, height: 300),
+          Image.asset(
+            "assets/images/quiz-logo.png",
+            width: 300,
+            height: 300,
+            color: const Color.fromARGB(150, 255, 255, 255),
+          ),
+          /* Opacity(
+            opacity: 0.5,
+            child: Image.asset(
+              "assets/images/quiz-logo.png",
+              width: 300,
+              height: 300,
+            ),
+          ), */
           const SizedBox(height: 80),
           const Text(
             "Learn Flutter the Fun Way!",
             style: TextStyle(color: Colors.white, fontSize: 24),
           ),
-          SizedBox(height: 80),
-          OutlinedButton(
-            onPressed: () {
-
-            },
-            child: Text(
-              "Click here to start",
-              style: TextStyle(color: Colors.white),
-            ),
+          const SizedBox(height: 80),
+          OutlinedButton.icon(
+            onPressed: (
+              
+            ) {},
+            style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+            label: const Text("Click here to start"),
+            icon: const Icon(Icons.arrow_right_alt, color: Colors.amber),
           ),
         ],
       ),
