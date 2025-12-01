@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ScreenTheme extends StatelessWidget {
-  ScreenTheme({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
