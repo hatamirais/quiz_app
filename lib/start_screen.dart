@@ -7,7 +7,6 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -28,7 +27,7 @@ class StartScreen extends StatelessWidget {
             onPressed: startQuiz,
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             label: const Text("Click here to start"),
-            icon: const Icon(Icons.arrow_right_alt, color: Colors.amber),
+            icon: const Icon(Icons.arrow_right_alt),
           ),
         ],
       ),
