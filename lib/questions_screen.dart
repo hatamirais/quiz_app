@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen(this.onGoBack, {super.key});
+
+  final void Function() onGoBack;
 
   @override
   State<QuestionsScreen> createState() {
@@ -20,16 +22,16 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             "Questions Screen",
             style: TextStyle(color: Colors.white, fontSize: 24),
           ),
-          const SizedBox(height: 40),
-
+          const SizedBox(height: 40), // Gave gap between text and button
           // Button 1: Go back one step
           OutlinedButton.icon(
-            onPressed: () {}, // Calls resetState (but doesn't know that!)
+            onPressed: () {
+              widget.onGoBack();
+            }, // Calls resetState (but doesn't know that!)
             label: const Text("Go Back One Step"),
             icon: const Icon(Icons.arrow_back),
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
           ),
-
           const SizedBox(height: 20),
         ],
       ),

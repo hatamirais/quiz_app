@@ -20,15 +20,22 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void goBack() {
+    setState(() {
+      activeScreen = 'start-screen';
+    });
+  }
+
   @override
   Widget build(context) {
     Widget screenWidget = StartScreen(switchScreen);
 
     if (activeScreen == 'questions-screen') {
-      screenWidget = const QuestionsScreen();
+      screenWidget = QuestionsScreen(goBack);
     }
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -44,6 +51,7 @@ class _QuizState extends State<Quiz> {
           child: screenWidget,
         ),
       ),
+      title: "Quiz App",
     );
   }
 }
