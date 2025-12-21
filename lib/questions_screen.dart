@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/widgets/answer_button.dart';
+import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/widgets/answer_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen(this.onGoBack, {super.key});
@@ -13,26 +16,26 @@ class QuestionsScreen extends StatefulWidget {
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
-  Widget build(context) {
-    return Center(
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
         children: [
           const Text(
-            "Questions Screen",
-            style: TextStyle(color: Colors.white, fontSize: 24),
+            "The question...",
+            style: TextStyle(fontSize: 24, color: Colors.white),
           ),
-          const SizedBox(height: 40), // Gave gap between text and button
-          // Button 1: Go back one step
-          OutlinedButton.icon(
-            onPressed: () {
-              widget.onGoBack();
-            }, // Calls resetState (but doesn't know that!)
-            label: const Text("Go Back One Step"),
-            icon: const Icon(Icons.arrow_back),
-            style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-          ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
+          AnswerButton(answerText: 'Answer 1', onSelected: () {}),
+          const SizedBox(height: 10),
+          AnswerButton(answerText: 'Answer 2', onSelected: () {}),
+          const SizedBox(height: 10),
+          AnswerButton(answerText: 'Answer 3', onSelected: () {}),
+          const SizedBox(height: 10),
+          AnswerButton(answerText: 'Answer 4', onSelected: () {}),
+          const SizedBox(height: 10),
         ],
       ),
     );
